@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>9jamusicblaze | welcome</title>
+  <title>9jamusicblaze | Videos category</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:500,600,700,800,800i|Titillium+Web" rel="stylesheet">
@@ -103,7 +103,7 @@
     <div class="welcome-slides owl-carousel">
 
       <!-- Single Welcome Slide -->
-      <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url(img/bg-img/newbg.jpg);">
+      <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url({{ asset('img/bg-img/newbg.jpg') }});">
         <div class="container h-100">
           <div class="row h-100 align-items-center">
             <div class="col-12">
@@ -115,6 +115,7 @@
                    <a href="" class="text-center" style="padding:7px; margin:0;border-radius:15px;background-color:lightcyan; font-size:18px;width:100px;">Videos</a>
                    <a href="" class="text-center" style="padding:7px; margin:0;border-radius:15px;background-color:lightcyan; font-size:18px;width:200px;">Songs Promotion </a>
                    <a href="" class="text-center music" style="padding:7px; margin-left:3px;border-radius:15px;background-color:lightcyan; font-size:18px;width:100px;">Latest</a>
+                <a href="{{route('songs.create')}}" class="text-center music" style="padding:7px; margin-left:3px;border-radius:15px;background-color:lightcyan; font-size:18px;width:200px;">Upload Song</a>
 
                 </div>
                  <div class="top-search-area mt-4 text-center">
@@ -178,7 +179,7 @@
               <!-- Welcome Music Area -->
               <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap" data-animation="fadeInUp" data-delay="900ms">
                 <div class="poca-music-thumbnail">
-                  <img src="./img/bg-img/4.jpg" alt="">
+                  <img src="{{ asset('/img/bg-img/4.jpg') }}" alt="">
                 </div>
                 <div class="poca-music-content">
                   <span class="music-published-date">December 8, 2018</span>
@@ -224,7 +225,7 @@
               <!-- Welcome Music Area -->
               <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap" data-animation="fadeInUp" data-delay="900ms">
                 <div class="poca-music-thumbnail">
-                  <img src="./img/bg-img/4.jpg" alt="">
+                  <img src="{{ asset('/img/bg-img/4.jpg') }}" alt="">
                 </div>
                 <div class="poca-music-content">
                   <span class="music-published-date">December 7, 2018</span>
@@ -299,15 +300,15 @@
     <div class="container">
       <div class="poca-projects-menu mb-30 wow fadeInUp" data-wow-delay="0.3s">
         <div class="text-center portfolio-menu">
-          <button class="btn active" data-filter=".entre"><a href="">Music</a></button>
-        <button class="btn" data-filter=".media"><a href="{{route('videos.index')}}">Videos</a></button>
+          <button class="btn " data-filter=".entre"><a href="/">Music</a></button>
+        <button class="btn active" data-filter=".media"><a href="{{route('videos.index')}}">Videos</a></button>
           <button class="btn" data-filter=".tech"><a href="{{route('news.index')}}">News</a></button>
           <button class="btn" data-filter=".tutor"><a href="{{route('songs.promote')}}">Promote Songs</a></button>
         </div>
       </div>
     </div>
 
-    {{-- <div class="container">
+    <div class="container">
       <div class="row poca-portfolio">
 
         <!-- Single gallery Item -->
@@ -315,7 +316,7 @@
           <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
-              <img src="./img/bg-img/5.jpg" alt="">
+              <img src="{{ asset('/img/bg-img/5.jpg') }}" alt="">
             </div>
             <div class="poca-music-content text-center">
               <span class="music-published-date mb-2">December 9, 2018</span>
@@ -346,7 +347,7 @@
           <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
-              <img src="./img/bg-img/6.jpg" alt="">
+              <img src="{{ asset('/img/bg-img/6.jpg') }}" alt="">
             </div>
             <div class="poca-music-content text-center">
               <span class="music-published-date mb-2">December 9, 2018</span>
@@ -377,7 +378,7 @@
           <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
-              <img src="./img/bg-img/7.jpg" alt="">
+              <img src="{{ asset('/img/bg-img/7.jpg') }}" alt="">
             </div>
             <div class="poca-music-content text-center">
               <span class="music-published-date mb-2">December 9, 2018</span>
@@ -408,7 +409,7 @@
           <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
-              <img src="./img/bg-img/8.jpg" alt="">
+              <img src="{{ asset('/img/bg-img/8.jpg') }}" alt="">
             </div>
             <div class="poca-music-content text-center">
               <span class="music-published-date mb-2">December 9, 2018</span>
@@ -439,7 +440,7 @@
           <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
-              <img src="./img/bg-img/9.jpg" alt="">
+              <img src="{{ asset('/img/bg-img/9.jpg') }}" alt="">
             </div>
             <div class="poca-music-content text-center">
               <span class="music-published-date mb-2">December 9, 2018</span>
@@ -470,7 +471,7 @@
           <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
-              <img src="./img/bg-img/10.jpg" alt="">
+              <img src="{{ asset('/img/bg-img/10.jp') }}g" alt="">
             </div>
             <div class="poca-music-content text-center">
               <span class="music-published-date mb-2">December 9, 2018</span>
@@ -497,10 +498,10 @@
         </div>
 
       </div>
-    </div> --}}
+    </div>
     <div class="container">
         <div class="row justify-content-center">
-              <div class="col-md-4 col-lg-4"><img src="img/bg-img/26.jpg" alt="">
+              <div class="col-md-4 col-lg-4"><img src="{{ asset('img/bg-img/26.jpg') }}" alt="">
                 <p>New song <a href="" class="float-right text-primary">Download</a></p>
              <div class="poca-music-player">
                     <audio preload="auto" controls>
@@ -508,7 +509,7 @@
                     </audio>
                   </div>
             </div>
-    <div class="col-md-4 col-lg-4"><img src="img/bg-img/26.jpg" alt="">
+    <div class="col-md-4 col-lg-4"><img src="{{ asset('img/bg-img/26.jpg') }}" alt="">
         <p>New song <a href="" class="float-right text-primary">Download</a></p>
      <div class="poca-music-player">
                     <audio preload="auto" controls>
@@ -516,7 +517,7 @@
                     </audio>
                   </div>
     </div>
-    <div class="col-md-4 col-lg-4"><img src="img/bg-img/26.jpg" alt="">
+    <div class="col-md-4 col-lg-4"><img src="{{ asset('img/bg-img/26.jpg') }}" alt="">
         <p>New song <a href="" class="float-right text-primary">Download</a></p>
      <div class="poca-music-player">
                     <audio preload="auto" controls>
@@ -555,7 +556,7 @@
         <!-- Single Featured Guest -->
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="single-featured-guest mb-80">
-            <img src="img/bg-img/25.jpg" alt="">
+            <img src="{{ asset('img/bg-img/25.jpg') }}" alt="">
             <div class="guest-info">
               <h5>Alfred Day</h5>
               <span>PRODUCER</span>
@@ -566,7 +567,7 @@
         <!-- Single Featured Guest -->
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="single-featured-guest mb-80">
-            <img src="img/bg-img/26.jpg" alt="">
+            <img src="{{ asset('img/bg-img/26.jpg') }}" alt="">
             <div class="guest-info">
               <h5>Jayden White</h5>
               <span>DRUMMER</span>
@@ -577,7 +578,7 @@
         <!-- Single Featured Guest -->
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="single-featured-guest mb-80">
-            <img src="img/bg-img/27.jpg" alt="">
+            <img src="{{ asset('img/bg-img/27.jpg') }}" alt="">
             <div class="guest-info">
               <h5>Vincent Reid</h5>
               <span>ENTREPRENEUR</span>
@@ -590,7 +591,7 @@
   <!-- ***** Featured Guests Area End ***** -->
 
   <!-- ***** Newsletter Area Start ***** -->
-  <section class="poca-newsletter-area bg-img bg-overlay pt-50 jarallax" style="background-image: url(img/bg-img/15.jpg);">
+  <section class="poca-newsletter-area bg-img bg-overlay pt-50 jarallax" style="background-image: url({{ asset('img/bg-img/15.jpg') }});">
     <div class="container">
       <div class="row align-items-center">
         <!-- Newsletter Content -->
@@ -691,9 +692,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <script src="{{asset('js1/default-assets/active.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script>
-      $(document).ready(function () {
-          $('#modal').modal('show');
-      })
+
 
 @if (Session::has('success'))
                     toastr.success("{{ Session::get('success') }}");

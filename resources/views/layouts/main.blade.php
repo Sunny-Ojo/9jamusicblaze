@@ -103,7 +103,7 @@
     <div class="welcome-slides owl-carousel">
 
       <!-- Single Welcome Slide -->
-      <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url(img/bg-img/newbg.jpg);">
+      <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url({{ asset('img/bg-img/newbg.jpg') }});">
         <div class="container h-100">
           <div class="row h-100 align-items-center">
             <div class="col-12">
@@ -270,65 +270,51 @@
         </div>
       </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="modal fade" id="modal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-Header text-center"><h4 class="text-primary">Welcome to 9jamusicblaze official website, <br>What would you like to do today?</h4></div>
-                            <div class="modal-body text-center">
-                                <ul class="list-group">
-                                <li class="list-group-item"><a href="{{route('songs.index')}}">Download Songs</a></li>
-                                    <li class="list-group-item"><a href="">Download Videos</a></li>
-                                <li class="list-group-item"><a href="{{route('songs.create')}}">Upload Songs</a></li>
-                                    <li class="list-group-item"><a href="">Promote Songs</a></li>
-                                    <li class="list-group-item"><a href="">See latest songs and videos</a></li>
-                                </ul>
-                            </div>
-                            <div class="modal-footer"><a data-dismiss="modal" class="btn btn-success text-white">Close</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <!-- Projects Menu -->
     <div class="container">
       <div class="poca-projects-menu mb-30 wow fadeInUp" data-wow-delay="0.3s">
         <div class="text-center portfolio-menu">
-          <button class="btn active" data-filter=".entre"><a href="">Music</a></button>
+
+          <button class="btn " data-filter=".entre"><a href="">Music</a></button>
         <button class="btn" data-filter=".media"><a href="{{route('videos.index')}}">Videos</a></button>
-          <button class="btn" data-filter=".tech"><a href="{{route('news.index')}}">News</a></button>
+          @if ($layout == 'news.index')
+                 <button class="btn active" data-filter=".tech"><a href="{{route('news.index')}}">News</a></button>
+            @endif
           <button class="btn" data-filter=".tutor"><a href="{{route('songs.promote')}}">Promote Songs</a></button>
         </div>
       </div>
     </div>
 
-    {{-- <div class="container">
+    <div class="container">
       <div class="row poca-portfolio">
 
         <!-- Single gallery Item -->
-        <div class="col-12 col-md-6 single_gallery_item entre wow fadeInUp" data-wow-delay="0.2s">
+        <div class="col-12 col-md-12 single_gallery_item entre wow fadeInUp" data-wow-delay="0.2s">
           <!-- Welcome Music Area -->
-          <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
-            <div class="poca-music-thumbnail">
-              <img src="./img/bg-img/5.jpg" alt="">
-            </div>
-            <div class="poca-music-content text-center">
-              <span class="music-published-date mb-2">December 9, 2018</span>
-              <h2>Episode 201 - You Don’t Know Squat!</h2>
-              <div class="music-meta-data">
+         @if (count($news)> 0)
+         @foreach ($news as $key)
+         <p>Author: {{ $news['articles'][0]['author']}}</p>
+
+         <p> Title: {{$news['articles'][0]['title']}}</p>
+         <p>Content: {{$news['articles'][0]['content']}}</p>
+         <p>Author: {{ $news['articles'][1]['author']}}</p>
+
+         <p> Title: {{$news['articles'][1]['title']}}</p>
+         <p>Content: {{$news['articles'][1]['content']}}</p>
+         <p>Author: {{ $news['articles'][2]['author']}}</p>
+
+         <p> Title: {{$news['articles'][2]['title']}}</p>
+         <p>Content: {{$news['articles'][2]['content']}}</p>
+
+        @endforeach
+         @endif
+              {{-- <div class="music-meta-data">
                 <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
-              </div>
+              </div> --}}
               <!-- Music Player -->
-              <div class="poca-music-player">
-                <audio preload="auto" controls>
-                  <source src="audio/dummy-audio.mp3">
-                </audio>
-              </div>
+
               <!-- Likes, Share & Download -->
               <div class="likes-share-download d-flex align-items-center justify-content-between">
                 <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
@@ -342,163 +328,11 @@
         </div>
 
         <!-- Single gallery Item -->
-        <div class="col-12 col-md-6 single_gallery_item entre tutor wow fadeInUp" data-wow-delay="0.2s">
-          <!-- Welcome Music Area -->
-          <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
-            <div class="poca-music-thumbnail">
-              <img src="./img/bg-img/6.jpg" alt="">
-            </div>
-            <div class="poca-music-content text-center">
-              <span class="music-published-date mb-2">December 9, 2018</span>
-              <h2>Episode 202 - I Want A New Judge!</h2>
-              <div class="music-meta-data">
-                <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
-              </div>
-              <!-- Music Player -->
-              <div class="poca-music-player">
-                <audio preload="auto" controls>
-                  <source src="audio/dummy-audio.mp3">
-                </audio>
-              </div>
-              <!-- Likes, Share & Download -->
-              <div class="likes-share-download d-flex align-items-center justify-content-between">
-                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                <div>
-                  <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Share(04)</a>
-                  <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Single gallery Item -->
-        <div class="col-12 col-md-6 single_gallery_item media wow fadeInUp" data-wow-delay="0.2s">
-          <!-- Welcome Music Area -->
-          <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
-            <div class="poca-music-thumbnail">
-              <img src="./img/bg-img/7.jpg" alt="">
-            </div>
-            <div class="poca-music-content text-center">
-              <span class="music-published-date mb-2">December 9, 2018</span>
-              <h2>Episode 203 - The Last Blockbuster</h2>
-              <div class="music-meta-data">
-                <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
-              </div>
-              <!-- Music Player -->
-              <div class="poca-music-player">
-                <audio preload="auto" controls>
-                  <source src="audio/dummy-audio.mp3">
-                </audio>
-              </div>
-              <!-- Likes, Share & Download -->
-              <div class="likes-share-download d-flex align-items-center justify-content-between">
-                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                <div>
-                  <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Share(04)</a>
-                  <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Single gallery Item -->
-        <div class="col-12 col-md-6 single_gallery_item media wow fadeInUp" data-wow-delay="0.2s">
-          <!-- Welcome Music Area -->
-          <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
-            <div class="poca-music-thumbnail">
-              <img src="./img/bg-img/8.jpg" alt="">
-            </div>
-            <div class="poca-music-content text-center">
-              <span class="music-published-date mb-2">December 9, 2018</span>
-              <h2>Episode 204 - The Last Blockbuster</h2>
-              <div class="music-meta-data">
-                <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
-              </div>
-              <!-- Music Player -->
-              <div class="poca-music-player">
-                <audio preload="auto" controls>
-                  <source src="audio/dummy-audio.mp3">
-                </audio>
-              </div>
-              <!-- Likes, Share & Download -->
-              <div class="likes-share-download d-flex align-items-center justify-content-between">
-                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                <div>
-                  <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Share(04)</a>
-                  <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Single gallery Item -->
-        <div class="col-12 col-md-6 single_gallery_item tech tutor wow fadeInUp" data-wow-delay="0.2s">
-          <!-- Welcome Music Area -->
-          <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
-            <div class="poca-music-thumbnail">
-              <img src="./img/bg-img/9.jpg" alt="">
-            </div>
-            <div class="poca-music-content text-center">
-              <span class="music-published-date mb-2">December 9, 2018</span>
-              <h2>Episode 205 - See Ya In Three!</h2>
-              <div class="music-meta-data">
-                <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
-              </div>
-              <!-- Music Player -->
-              <div class="poca-music-player">
-                <audio preload="auto" controls>
-                  <source src="audio/dummy-audio.mp3">
-                </audio>
-              </div>
-              <!-- Likes, Share & Download -->
-              <div class="likes-share-download d-flex align-items-center justify-content-between">
-                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                <div>
-                  <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Share(04)</a>
-                  <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Single gallery Item -->
-        <div class="col-12 col-md-6 single_gallery_item tech wow fadeInUp" data-wow-delay="0.2s">
-          <!-- Welcome Music Area -->
-          <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
-            <div class="poca-music-thumbnail">
-              <img src="./img/bg-img/10.jpg" alt="">
-            </div>
-            <div class="poca-music-content text-center">
-              <span class="music-published-date mb-2">December 9, 2018</span>
-              <h2>Episode 206 - Let’s Get This Party Started!</h2>
-              <div class="music-meta-data">
-                <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
-              </div>
-              <!-- Music Player -->
-              <div class="poca-music-player">
-                <audio preload="auto" controls>
-                  <source src="audio/dummy-audio.mp3">
-                </audio>
-              </div>
-              <!-- Likes, Share & Download -->
-              <div class="likes-share-download d-flex align-items-center justify-content-between">
-                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                <div>
-                  <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Share(04)</a>
-                  <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
       </div>
-    </div> --}}
-    <div class="container">
+    </div>
+    {{-- <div class="container">
         <div class="row justify-content-center">
               <div class="col-md-4 col-lg-4"><img src="img/bg-img/26.jpg" alt="">
                 <p>New song <a href="" class="float-right text-primary">Download</a></p>
@@ -526,7 +360,7 @@
     </div>
 
         </div>
-    </div>
+    </div> --}}
 
     <div class="container">
       <div class="row">
@@ -691,9 +525,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <script src="{{asset('js1/default-assets/active.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script>
-      $(document).ready(function () {
-          $('#modal').modal('show');
-      })
 
 @if (Session::has('success'))
                     toastr.success("{{ Session::get('success') }}");

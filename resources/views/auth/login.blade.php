@@ -1,9 +1,9 @@
-@extends('layouts.app')
-
+@extends('layouts.nav')
+@section('titleHeader', 'Please Login to Continue.')
 @section('content')
-<div class="container">
+{{-- <div class="container"> --}}
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6 ">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -57,9 +57,10 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+
+                                @if (Route::has('register'))
+                                    <a class="btn btn-link" href="{{ route('register') }}">
+                                        {{ __('Register') }}
                                     </a>
                                 @endif
                             </div>
@@ -69,5 +70,5 @@
             </div>
         </div>
     </div>
-</div>
+{{-- </div> --}}
 @endsection

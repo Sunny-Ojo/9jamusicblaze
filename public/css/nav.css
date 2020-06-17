@@ -1,0 +1,17 @@
+@media only screen and (max-width: 767px) {
+    .welcome-welcome-slide {
+        height: 800px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .welcome-welcome-slide {
+        height: 800px;
+    }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 950px) {
+    .welcome-welcome-slide {
+        height: 800px;
+    }
+}
